@@ -1,21 +1,20 @@
-{
+  {
     "name": "LoyalNotas",
     "short_name": "LoyalNotas",
+    "description": "Seu aplicativo de anotações",
     "start_url": "/",
-    "display": "standalone",
-    "background_color": "#ffeb3b",
+    "lang": "pt-BR",
     "theme_color": "#ffeb3b",
-    "description": "Seu app de anotações.",
+    "background_color": "#ffeb3b",
+    "display": "standalone",
     "icons": [
       {
-        "src": "src/assets/logo.svg",
-        "sizes": "192x192",
-        "type": "image/svg"
-      },
+        "src": "https://static.vecteezy.com/system/resources/previews/017/395/366/original/google-keep-notes-and-lists-icon-free-png.png"
+      }
+    ],
+    "screenshots": [
       {
-        "src": "src/assets/logo.svg",
-        "sizes": "512x512",
-        "type": "image/svg"
+        "src": "https://static.vecteezy.com/system/resources/previews/017/395/366/original/google-keep-notes-and-lists-icon-free-png.png"
       }
     ]
   }
