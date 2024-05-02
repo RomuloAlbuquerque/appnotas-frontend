@@ -1,0 +1,73 @@
+<script setup>
+import { ref } from 'vue';
+import router from '@/routes';
+import { atualizarNota, deletarNota, lista } from '@/asyncFunctions.vue';
+
+const param = ref(router.currentRoute.value.params.id)
+const objeto = lista.value.filter(x => x.id == param.value)[0]
+const titulo = ref(objeto.titulo)
+const nota = ref(objeto.nota)
+
+const atualizar = () => objeto ? (atualizarNota(param.value, {titulo: titulo.value, nota: nota.value}), router.push('/')) : router.push('/')
+const excluir = () => (deletarNota(param.value), router.push('/'))
+</script>
+
+<template>
+<div class="caixa">
+  <button @click="atualizar">
+    &lt;
+  </button>
+  <input v-model="titulo">
+  <textarea v-model="nota">
+  </textarea>
+  <button @click="excluir" class="excluir">x</button>
+</div>
+</template>
+
+<style scoped>
+  .caixa{
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: calc(96vh);
+    padding: 3% 5%; 
+    color: #202124;
+  }
+  button{
+    border: 1px solid transparent;
+    height: 50px;
+    width: 50px;
+    background-color: #ffeb3b;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #333;
+    margin: 10px
+  }
+  input, textArea{
+    width: calc(100% - 60px);
+     height: 10px;
+    padding: 20px;
+     border-radius: 5px;
+     margin: 10px;
+     background-color: #fff;
+     border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 15px;
+  }
+  textArea{
+    min-height: 300px;
+  }
+  .excluir{
+    background-color: rgb(255, 74, 74);
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    margin-left: calc(100% - 40px);
+  }
+</style>
