@@ -4,6 +4,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffeb3b",
+    "theme_color": "#ffeb3b",
     "description": "Seu app de anotações.",
     "icons": [
       {
