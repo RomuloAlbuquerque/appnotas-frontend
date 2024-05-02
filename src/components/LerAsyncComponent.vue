@@ -2,7 +2,9 @@
 
 import { ref } from 'vue';
 import router from '@/routes';
-import { lista } from '@/asyncFunctions.vue';
+import { lista, atualizarInstanciaDeLista } from '@/asyncFunctions.vue';
+
+atualizarInstanciaDeLista()
 
 const termo = ref('')
 

@@ -1,11 +1,11 @@
 <script>
 import axios from 'axios';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const urlReplit = 'https://27499262-9023-401e-aa24-9c07eae665d0-00-1tjf1vaq9hopo.worf.replit.dev/'
 
-export const lista = ref(await axios.get(`${urlReplit}readAllNotes`)
-        .then((res) => res.data).catch((error) => console.log(error)))
+
+export const lista = ref([])
 
 export const atualizarInstanciaDeLista = async () =>
     await axios.get(`${urlReplit}readAllNotes`)
