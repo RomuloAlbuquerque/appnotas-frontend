@@ -11,7 +11,8 @@
 <style>
 body {
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #ffb6c1;
+  /* background-color: #f5f5f5; */
   margin: 0;
   padding: 0;
 }

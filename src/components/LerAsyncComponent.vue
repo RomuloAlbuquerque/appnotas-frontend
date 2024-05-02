@@ -18,7 +18,7 @@ const atualizarNota = (obj) => router.push(`/atualizar/${obj.id}`)
 
 <template>
   <div class="espaco">
-
+    <h1 id="andreia">Andréia</h1>
     <input v-model="termo" placeholder="Título a pesquisar" />
     <div class="div">
       <ul>
@@ -42,6 +42,12 @@ ul {
 
 
 <style scoped>
+#andreia{
+  text-align: right;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  margin: 15px;
+}
 .espaco {
   padding-top: 95px;
   border: 1px solid transparent;
@@ -85,7 +91,8 @@ li {
   width: calc(50% - 40px);
   min-height: 50px;
   margin: 0 10px 20px;
-  background-color: #fff;
+  background-color: #ffb6c1;
+  /* background-color: #fff; */
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -94,7 +101,8 @@ li {
 .botaoMais {
   height: 50px;
   width: 50px;
-  background-color: #ffeb3b;
+  background-color: #FF1493;
+  /* background-color: #ffeb3b; */
   font-size: 50px;
   font-weight: bold;
   display: flex;

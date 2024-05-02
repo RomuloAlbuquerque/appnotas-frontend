@@ -7,6 +7,7 @@ const routes = [
     {path: '/', component: Ler},
     {path: '/criar', component: Criar},
     {path: '/atualizar/:id', component: Atualizar}
+    // {path: '/buscarUsuario/:id', component: buscarUsuario}
 ]
 
 const router = createRouter({

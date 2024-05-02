@@ -37,7 +37,7 @@ const excluir = () => (deletarNota(param.value), router.push('/'))
     border: 1px solid transparent;
     height: 50px;
     width: 50px;
-    background-color: #ffeb3b;
+    background-color: #FF1493;
     font-size: 50px;
     font-weight: bold;
     display: flex;
