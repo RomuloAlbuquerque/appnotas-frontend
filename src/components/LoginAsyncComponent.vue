@@ -1,6 +1,6 @@
 <script setup>
 import router from '@/routes';
-import { reactive, ref } from 'vue';
+import { ref } from 'vue';
 import { verificarLogin, cadastrarUsuario } from '@/asyncFunctions.vue';
 
 const nome = ref('')
@@ -8,6 +8,9 @@ const email = ref('')
 const senha = ref('')
 const msg = ref('Login')
 const invisible = ref('hidden')
+const displaylogin = ref('')
+const displaycadastrar = ref('none')
+const nomeBotaoCadastrar = ref('Cadastrar')
 
 const login = async () => {
   if (!email.value || !senha.value) {
@@ -19,8 +22,10 @@ const login = async () => {
       senha.value = ''
       invisible.value = ''
       msg.value = 'não encontrado, preencha os dados e clique em cadastrar'
+      displaylogin.value = 'none'
+      displaycadastrar.value = ''
     } else {
-      router.push(`/ler/${usuario.id}`)
+      router.push(`/ler/${usuario.id}/${usuario.nome}`)
     }
   }
 }
@@ -28,9 +33,16 @@ const login = async () => {
 const cadastrar = async () => {
   if (!nome.value || !email.value || !senha.value) {
     msg.value = 'Os dados não podem estar vazios'
-  }
+  }else{
   await cadastrarUsuario({ nome: nome.value, email: email.value, senha: senha.value })
   login()
+  }
+}
+
+const mudarNomeBotao = () => {
+  if(nome.value !== '' && email.value !== '' && senha.value !== ''){
+    nomeBotaoCadastrar.value = 'Cadastrar e Fazer Login'
+  }
 }
 </script>
 
@@ -40,16 +52,16 @@ const cadastrar = async () => {
     <div class="form">
       <input :style="{ visibility: invisible }" v-model="nome" placeholder="nome" />
       <input class="inputEmail" v-model="email" placeholder="email" />
-      <input class="inputSenha" v-model="senha" placeholder="senha" />
-      <button class="botaoLogar" @click="login">Login</button>
+      <input class="inputSenha" v-model="senha" @keypress="mudarNomeBotao" placeholder="senha" />
+      <button class="btnLoginCadastrar" :style="{ display: displaylogin }" @click="login">Login</button>
     </div>
-    <button class="botaoCadastrar" @click="cadastrar">Cadastrar</button>
+    <button class='btnLoginCadastrar' :style="{ display: displaycadastrar }" @click="cadastrar">{{nomeBotaoCadastrar}}</button>
   </div>
 </template>
 
 <style scoped>
 .principal {
-  border: 1px solid black;
+  border: 1px solid transparent;
   background-color: #ffeb3b;
   height: 100vh;
   width: 100%;
@@ -66,15 +78,25 @@ const cadastrar = async () => {
   text-transform: uppercase;
   text-align: center;
   color: black;
+  margin-top: 80px;
 }
 
 .form {
   border: 1px solid transparent;
-  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+}
+.btnLoginCadastrar{
+  border: 1px solid transparent;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100px;
+  color: #312d2d;
+  font-weight: bold;
+  width: 100px;
+  margin-top: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1)
 }
 
 input {
@@ -82,6 +104,7 @@ input {
   border-radius: 5px;
   border: 1px solid transparent;
   text-align: center;
+  margin: 20px 0;
 }
 
 button {

@@ -6,9 +6,9 @@ import Login from "@/views/Login.vue";
 
 const routes = [
     {path: '/', component: Login},
-    {path: '/ler/:iduser', component: Ler},
-    {path: '/criar/:iduser', component: Criar},
-    {path: '/atualizar/:idnota/:iduser', component: Atualizar},
+    {path: '/ler/:iduser/:nome?', component: Ler},
+    {path: '/criar/:iduser/:nome?', component: Criar},
+    {path: '/atualizar/:idnota/:iduser/:nome?', component: Atualizar},
 
     // {path: '/buscarUsuario/:id', component: BuscarUsuario},
     // {path: '/criarUsuario/', component: CriarUsuario}

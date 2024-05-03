@@ -5,12 +5,15 @@ import { atualizarInstanciaDeLista, atualizarNota, deletarNota, lista } from '@/
 
 const idnota = ref(router.currentRoute.value.params.idnota)
 const iduser = ref(router.currentRoute.value.params.iduser)
+const nome = ref(router.currentRoute.value.params.nome)
+
 atualizarInstanciaDeLista(iduser.value)
+
 const objeto = lista.value.filter(x => x.id == idnota.value)[0]
 const titulo = ref(objeto.titulo)
 const nota = ref(objeto.nota)
 
-const atualizar = () => objeto ? (atualizarNota(idnota.value, {titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}`)) : router.push(`/ler/${iduser.value}`)
+const atualizar = () => objeto ? (atualizarNota(idnota.value, {titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}/${nome.value}`)) : router.push(`/ler/${iduser.value}/${nome.value}`)
 const excluir = () => (deletarNota(idnota.value, iduser.value), router.push(`/ler/${iduser.value}`))
 </script>
 titulo

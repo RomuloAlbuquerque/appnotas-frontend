@@ -7,8 +7,6 @@ const replit = 'https://27499262-9023-401e-aa24-9c07eae665d0-00-1tjf1vaq9hopo.wo
 const railway = 'https://appnotas-backend-production.up.railway.app/'
 const servidorAtual = ref(railway)
 
-console.log('servidor atual ',servidorAtual.value)
-
 export const lista = ref([])
 
 export const atualizarInstanciaDeLista = async (iduser) => {

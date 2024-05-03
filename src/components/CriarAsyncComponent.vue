@@ -4,15 +4,15 @@ import router from '../routes'
 import { adicionarNota, atualizarInstanciaDeLista } from '@/asyncFunctions.vue';
 
 const iduser = ref(router.currentRoute.value.params.iduser)
+const nome = ref(router.currentRoute.value.params.nome)
+console.log(nome.value)
 
 atualizarInstanciaDeLista(iduser.value)
-
-// const objeto = reactive({titulo : '', nota: '', idUser: idUsuario.value})
 
 const titulo = ref('')
 const nota = ref('')
 
-const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}`)) : router.push(`/ler/${iduser.value}`)
+const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}/${nome.value}`)) : router.push(`/ler/${iduser.value}/${nome.value}`)
 </script>
 
 <template>
