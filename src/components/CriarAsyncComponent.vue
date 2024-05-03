@@ -33,7 +33,7 @@ const salvarNovaNota = () => objeto.titulo || objeto.nota ? (adicionarNota(objet
 button {
   height: 50px;
   width: 50px;
-  background-color: #FF1493;
+  background-color: #ffeb3b;
   font-size: 50px;
   font-weight: bold;
   display: flex;
