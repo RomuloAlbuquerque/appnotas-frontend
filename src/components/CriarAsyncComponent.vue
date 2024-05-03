@@ -1,11 +1,18 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import router from '../routes'
-import { adicionarNota } from '@/asyncFunctions.vue';
+import { adicionarNota, atualizarInstanciaDeLista } from '@/asyncFunctions.vue';
 
-const objeto = reactive({titulo : '', nota: ''})
+const iduser = ref(router.currentRoute.value.params.iduser)
 
-const salvarNovaNota = () => objeto.titulo || objeto.nota ? (adicionarNota(objeto), router.push('/')) : router.push('/')
+atualizarInstanciaDeLista(iduser.value)
+
+// const objeto = reactive({titulo : '', nota: '', idUser: idUsuario.value})
+
+const titulo = ref('')
+const nota = ref('')
+
+const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}`)) : router.push(`/ler/${iduser.value}`)
 </script>
 
 <template>
@@ -13,8 +20,8 @@ const salvarNovaNota = () => objeto.titulo || objeto.nota ? (adicionarNota(objet
     <button @click="salvarNovaNota">
       &lt;
     </button>
-    <input v-model="objeto.titulo" placeholder="Título">
-    <textarea v-model="objeto.nota" placeholder="Nota">
+    <input v-model="titulo" placeholder="Título">
+    <textarea v-model="nota" placeholder="Nota">
     </textarea>
   </div>
 </template>

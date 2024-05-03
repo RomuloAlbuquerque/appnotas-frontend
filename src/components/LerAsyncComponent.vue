@@ -4,15 +4,17 @@ import { ref } from 'vue';
 import router from '@/routes';
 import { lista, atualizarInstanciaDeLista } from '@/asyncFunctions.vue';
 
-atualizarInstanciaDeLista()
+const iduser = ref(router.currentRoute.value.params.iduser)
+
+atualizarInstanciaDeLista(iduser.value)
 
 const termo = ref('')
 
 const filtrar = () => !termo ? lista.value : lista.value.filter(x => x.titulo.toLowerCase().includes(termo.value.toLowerCase()))
 
-const navegarParaCriar = () => router.push('/criar')
+const navegarParaCriar = () => router.push(`/criar/${iduser.value}`)
 
-const atualizarNota = (obj) => router.push(`/atualizar/${obj.id}`)
+const atualizarNota = (obj) => router.push(`/atualizar/${obj.id}/${iduser.value}`)
 
 </script>
 
