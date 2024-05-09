@@ -12,14 +12,16 @@ atualizarInstanciaDeLista(iduser.value)
 const titulo = ref('')
 const nota = ref('')
 
-const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}/${nome.value}`)) : router.push(`/ler/${iduser.value}/${nome.value}`)
+const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({ titulo: titulo.value, nota: nota.value, iduser: iduser.value }), router.push(`/ler/${iduser.value}/${nome.value}`)) : router.push(`/ler/${iduser.value}/${nome.value}`)
 </script>
 
 <template>
   <div class="caixa">
-    <button @click="salvarNovaNota">
-      &lt;
+
+    <button @click="salvarNovaNota" class="botaoVoltar bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-500">
+      <p>&lt;</p>
     </button>
+
     <input v-model="titulo" placeholder="Título">
     <textarea v-model="nota" placeholder="Nota">
     </textarea>
@@ -37,24 +39,27 @@ const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({titulo
   color: #202124;
 }
 
-button {
-  height: 50px;
-  width: 50px;
+.botaoVoltar {
+  height: 40px;
+  width: 40px;
   background-color: #ffeb3b;
-  font-size: 50px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   border-radius: 5px;
-  color: #333;
-  margin: 10px
+  margin: 10px;
+}
+.botaoVoltar p{
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(53, 52, 52);
+  font-weight: 700;
 }
 
 input,
 textArea {
-  width: calc(100% - 60px);
+
   height: 10px;
   padding: 20px;
   border-radius: 5px;

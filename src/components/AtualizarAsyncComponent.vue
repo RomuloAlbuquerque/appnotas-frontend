@@ -19,13 +19,15 @@ const excluir = () => (deletarNota(idnota.value, iduser.value), router.push(`/le
 titulo
 <template>
 <div class="caixa">
-  <button @click="atualizar">
-    &lt;
-  </button>
+  <button @click="atualizar" class="botaoVoltar bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-500">
+      <p>&lt;</p>
+    </button>
   <input v-model="titulo">
   <textarea v-model="nota">
   </textarea>
-  <button @click="excluir" class="excluir">x</button>
+  <button @click="excluir" class="botaoExcluir bg-gradient-to-t from-red-600 via-red-500 to-red-700">
+      <p>X</p>
+    </button>
 </div>
 </template>
 
@@ -38,23 +40,24 @@ titulo
     padding: 3% 5%; 
     color: #202124;
   }
-  button{
-    border: 1px solid transparent;
-    height: 50px;
-    width: 50px;
-    background-color: #ffeb3b;
-    font-size: 50px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    border-radius: 5px;
-    color: #333;
-    margin: 10px
-  }
+  .botaoVoltar {
+  height: 40px;
+  width: 40px;
+  background-color: #ffeb3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+}
+.botaoVoltar p{
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgb(53, 52, 52);
+  font-weight: 700;
+}
   input, textArea{
-    width: calc(100% - 60px);
      height: 10px;
     padding: 20px;
      border-radius: 5px;
@@ -68,11 +71,14 @@ titulo
   textArea{
     min-height: 300px;
   }
-  .excluir{
+  .botaoExcluir{
     background-color: rgb(255, 74, 74);
     height: 30px;
     width: 30px;
     font-size: 20px;
     margin-left: calc(100% - 40px);
+  }
+  .botaoExcluir p{
+    font-weight: bold;
   }
 </style>
