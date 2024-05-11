@@ -7,6 +7,7 @@
     "theme_color": "#ffeb3b",
     "background_color": "#ffeb3b",
     "display": "standalone",
+    "prefer_related_applications": false,
     "icons": [
       {
         "src": "https://static.vecteezy.com/system/resources/previews/017/395/366/original/google-keep-notes-and-lists-icon-free-png.png"
