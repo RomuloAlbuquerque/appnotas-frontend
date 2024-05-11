@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter, createMemoryHistory, createWebHashHistory } from "vue-router";
 import Atualizar from "@/views/Atualizar.vue";
 import Criar from "@/views/Criar.vue";
 import Ler from "@/views/Ler.vue";

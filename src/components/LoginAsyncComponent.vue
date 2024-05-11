@@ -1,31 +1,23 @@
 <script setup>
 import router from '@/routes';
 import { ref } from 'vue';
-import { verificarLogin, cadastrarUsuario } from '@/asyncFunctions.vue';
+import { cadastrarUsuario } from '@/asyncFunctions.vue';
+import security from '@/services/security';
 
 
 const nome = ref('')
-const email = ref('')
-const senha = ref('')
+const email = ref('romulo.albuquerque@live.com')
+const senha = ref('123')
 const msg = ref('Acessar Minhas Notas')
 const none = ref('none')
 const nomeBotao = ref('Entrar')
 
 const login = async () => {
-  if (!email.value || !senha.value) {
-    msg.value = 'Os dados não podem estar vazios'
-  } else {
-    const usuario = await verificarLogin({ email: email.value, senha: senha.value })
-    if (!usuario) {
-      nome.value = ''
-      senha.value = ''
-      none.value = ''
-      msg.value = 'Não encontrado, preencha os dados e clique em cadastrar'
-      nomeBotao.value = 'Cadastrar'
-    } else {
-      router.push(`/ler/${usuario.id}/${usuario.nome}`)
-    }
-  }
+  const { auth, message, user } = await security.authenticate({ email: email.value, senha: senha.value })
+  auth == false
+    ? msg.value = message
+    : router.push(`/ler/${user.id}/${user.nome}`)
+
 }
 
 const cadastrar = async () => {

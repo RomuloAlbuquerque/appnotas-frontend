@@ -68,7 +68,7 @@ titulo
     font-size: 15px;
   }
   textArea{
-    min-height: 400px;
+    min-height: 500px;
   }
   .botaoExcluir{
     background-color: rgb(255, 74, 74);

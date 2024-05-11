@@ -5,7 +5,6 @@ import { adicionarNota, atualizarInstanciaDeLista } from '@/asyncFunctions.vue';
 
 const iduser = ref(router.currentRoute.value.params.iduser)
 const nome = ref(router.currentRoute.value.params.nome)
-console.log(nome.value)
 
 atualizarInstanciaDeLista(iduser.value)
 
@@ -71,6 +70,6 @@ textArea {
 }
 
 textArea {
-  min-height: 400px;
+  min-height: 500px;
 }
 </style>

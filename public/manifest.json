@@ -10,12 +10,12 @@
     "prefer_related_applications": false,
     "icons": [
       {
-        "src": "https://static.vecteezy.com/system/resources/previews/017/395/366/original/google-keep-notes-and-lists-icon-free-png.png"
+        "src": "/src/components/icons/IconNote.png"
       }
     ],
     "screenshots": [
       {
-        "src": "https://static.vecteezy.com/system/resources/previews/017/395/366/original/google-keep-notes-and-lists-icon-free-png.png"
+        "src": "/src/components/icons/IconNote.png"
       }
     ]
   }

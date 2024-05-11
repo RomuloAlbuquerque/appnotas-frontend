@@ -1,17 +1,19 @@
 <script>
 import axios from 'axios';
 import { ref } from 'vue';
+import security from './services/security';
 
 const local = 'http://localhost:3001/'
 const replit = 'https://27499262-9023-401e-aa24-9c07eae665d0-00-1tjf1vaq9hopo.worf.replit.dev/'
 const railway = 'https://appnotas-backend-production.up.railway.app/'
-const servidorAtual = ref(railway)
+const servidorAtual = ref(local)
 
 export const lista = ref([])
 
 export const atualizarInstanciaDeLista = async (iduser) => {
-    await axios.get(`${servidorAtual.value}readAllNotes/${iduser}`)
+    const result = await axios.get(`${servidorAtual.value}readAllNotes/${iduser}`, security.token)
         .then((res) => lista.value = res.data).catch((error) => console.log(error))
+        return security.authorize(result)
 }
 
 export const adicionarNota = async (obj) => {
@@ -34,7 +36,7 @@ export const cadastrarUsuario = async (obj) => {
     await axios.post(`${servidorAtual.value}createUser/`, obj)
         .catch((error) => console.log(error))
 }
-export const verificarLogin = async (obj) =>
+export const login = async (obj) =>
     await axios.post(`${servidorAtual.value}checkLogin/`, obj).then((res) => res.data)
         .catch((error) => console.log(error))
 
