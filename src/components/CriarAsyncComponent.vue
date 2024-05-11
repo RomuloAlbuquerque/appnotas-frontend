@@ -52,7 +52,6 @@ const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({ titul
 }
 .botaoVoltar p{
   font-size: 40px;
-  margin-bottom: 10px;
   color: rgb(53, 52, 52);
   font-weight: 700;
 }
@@ -72,6 +71,6 @@ textArea {
 }
 
 textArea {
-  min-height: 300px;
+  min-height: 400px;
 }
 </style>

@@ -53,7 +53,6 @@ titulo
 }
 .botaoVoltar p{
   font-size: 40px;
-  margin-bottom: 10px;
   color: rgb(53, 52, 52);
   font-weight: 700;
 }
@@ -69,7 +68,7 @@ titulo
     font-size: 15px;
   }
   textArea{
-    min-height: 300px;
+    min-height: 400px;
   }
   .botaoExcluir{
     background-color: rgb(255, 74, 74);

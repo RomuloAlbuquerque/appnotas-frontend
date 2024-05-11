@@ -151,11 +151,9 @@ li {
   position: fixed;
   right: 30px;
   bottom: 30px;
-  height: 50px;
 }
 .botaoMais p{
   font-size: 40px;
-  margin-bottom: 10px;
   color: rgb(53, 52, 52);
   font-weight: 700;
 }
