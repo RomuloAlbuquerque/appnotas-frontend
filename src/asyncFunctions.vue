@@ -6,7 +6,7 @@ import security from './services/security';
 const local = 'http://localhost:3001/'
 const replit = 'https://27499262-9023-401e-aa24-9c07eae665d0-00-1tjf1vaq9hopo.worf.replit.dev/'
 const railway = 'https://appnotas-backend-production.up.railway.app/'
-const servidorAtual = ref(local)
+const servidorAtual = ref(railway)
 
 export const lista = ref([])
 
