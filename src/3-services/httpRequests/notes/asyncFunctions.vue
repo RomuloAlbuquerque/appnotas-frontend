@@ -33,6 +33,7 @@ export const deletarNota = async (idnota, iduser) => {
 }
 //usuarios
 export const cadastrarUsuario = async (obj) => {
+    console.log('chegou até aqui')
     await axios.post(`${servidorAtual.value}createUser/`, obj)
         .catch((error) => console.log(error))
 }

@@ -14,7 +14,7 @@ const titulo = ref(objeto.titulo)
 const nota = ref(objeto.nota)
 
 const atualizar = () => objeto ? (atualizarNota(idnota.value, {titulo: titulo.value, nota: nota.value, iduser: iduser.value}), router.push(`/ler/${iduser.value}/${nome.value}`)) : router.push(`/ler/${iduser.value}/${nome.value}`)
-const excluir = () => (deletarNota(idnota.value, iduser.value), router.push(`/ler/${iduser.value}`))
+const excluir = () => (deletarNota(idnota.value, iduser.value), router.push(`/ler/${iduser.value}/${nome.value}`))
 </script>
 titulo
 <template>

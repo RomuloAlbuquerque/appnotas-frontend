@@ -36,6 +36,11 @@ const loginPolimorfico = () => {
     return cadastrar()
   }
 }
+
+const mostrarFormCadastrar = () => {
+  nomeBotao.value = 'Cadastrar'
+  none.value = ''
+}
 </script>
 
 
@@ -81,7 +86,7 @@ const loginPolimorfico = () => {
       <p class="text-center"><a href="#" class="text-xl font-bold leading-6 text-red-600 hover:text-indigo-500">Vamos
           Recuperar</a></p>
       <br>
-      <p class="mt-10 text-center text-lg text-black-500 font-semibold"><a>Ou fazer cadastro</a> </p>
+      <p class="mt-10 text-center text-lg text-black-500 font-bold"><a href="#" @click="mostrarFormCadastrar">Ou fazer cadastro</a> </p>
     </div>
   </div>
 </template>
