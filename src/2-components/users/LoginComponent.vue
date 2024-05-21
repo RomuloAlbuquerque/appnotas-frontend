@@ -6,17 +6,16 @@ import userSecurity from '../../3-services/security/users/userSecurity.js';
 
 
 const nome = ref('')
-const email = ref('romulo.albuquerque@live.com')
-const senha = ref('')
+const email = ref(localStorage.getItem('email'))
+const senha = ref(localStorage.getItem('senha'))
 const msg = ref('Acessar Minhas Notas')
 const none = ref('none')
 const nomeBotao = ref('Entrar')
-
 const login = async () => {
   const { auth, message, user } = await userSecurity.authenticate({ email: email.value, senha: senha.value })
   auth == false
     ? msg.value = message
-    : router.push(`/ler/${user.id}/${user.nome}`)
+    : (router.push(`/ler/${user.id}/${user.nome}`), localStorage.setItem('email', email.value), localStorage.setItem('senha', senha.value))
 
 }
 

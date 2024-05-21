@@ -9,13 +9,15 @@ const security = {
             result.message = 'Os campos de credenciais não podem estar vazios'
         } else {
             result.user = await login(credenciais)
-            if (!result.user) {
+            if (!result.user.id) {
                 result.message = 'E-mail e/ou senha inválidos'
+                console.log(result)
             } else {
                 result.auth = true
                 result.message = 'Login com sucesso'
                 token = result.user.token
                 localStorage.setItem('token', token)
+                console.log(result)
             }
         }
         return result
