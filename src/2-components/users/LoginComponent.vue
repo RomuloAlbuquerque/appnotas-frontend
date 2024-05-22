@@ -92,7 +92,8 @@ const mostrarFormCadastrar = () => {
 
 <style scoped>
 input {
-  padding-left: 10px
+  padding-left: 10px;
+  background-color: rgb(233, 230, 230);
 }
 
 .caixa-form {

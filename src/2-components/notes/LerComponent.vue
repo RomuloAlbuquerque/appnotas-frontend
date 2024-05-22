@@ -40,7 +40,7 @@ const sair = () => (security.destroyToken(), router.push(`/`))
       </ul>
     </div>
     <div class="flex items-center justify-center">
-  <button @click="navegarParaCriar" class="botaoMais bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-500">
+  <button @click="navegarParaCriar" class="botaoMais bg-gradient-to-t from-blue-400 via-blue-300 to-blue-500">
     <p>+</p>
   </button>
 </div>
@@ -85,8 +85,10 @@ ul {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 30px;
-  background-color: #ffeb3b;
-  color: #706969;
+  background-color: #1E90FF;
+  /* background-color: #ffeb3b; */
+  color: white;
+  font-weight: 500;
   width: 50px;
 }
 
@@ -143,7 +145,8 @@ li {
 .botaoMais {
   height: 50px;
   width: 50px;
-  background-color: #ffeb3b;
+  background-color: #1E90FF;
+  /* background-color: #ffeb3b; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,7 +158,8 @@ li {
 }
 .botaoMais p{
   font-size: 40px;
-  color: rgb(53, 52, 52);
+  /* color: rgb(53, 52, 52); */
+  color: black;
   font-weight: 700;
 }
 

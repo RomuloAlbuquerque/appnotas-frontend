@@ -17,7 +17,7 @@ const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({ titul
 <template>
   <div class="caixa">
 
-    <button @click="salvarNovaNota" class="botaoVoltar bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-500">
+    <button @click="salvarNovaNota" class="botaoVoltar bg-gradient-to-t from-blue-400 via-blue-300 to-blue-500">
       <p>&lt;</p>
     </button>
 
@@ -52,6 +52,7 @@ const salvarNovaNota = () => titulo.value || nota.value ? (adicionarNota({ titul
 .botaoVoltar p{
   font-size: 40px;
   color: rgb(53, 52, 52);
+  color: black;
   font-weight: 700;
 }
 

@@ -4,8 +4,8 @@
     "description": "Seu aplicativo de anotações",
     "start_url": "/",
     "lang": "pt-BR",
-    "theme_color": "#ffeb3b",
-    "background_color": "#ffeb3b",
+    "theme_color": "#1E90FF",
+    "background_color": "#1E90FF",
     "display": "standalone",
     "prefer_related_applications": false,
     "icons": [
@@ -19,3 +19,6 @@
       }
     ]
   }
+
+      // "theme_color": "#ffeb3b",
+    // "background_color": "#ffeb3b",

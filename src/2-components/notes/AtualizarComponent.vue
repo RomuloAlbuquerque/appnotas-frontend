@@ -19,7 +19,7 @@ const excluir = () => (deletarNota(idnota.value, iduser.value), router.push(`/le
 titulo
 <template>
 <div class="caixa">
-  <button @click="atualizar" class="botaoVoltar bg-gradient-to-t from-yellow-400 via-yellow-300 to-yellow-500">
+  <button @click="atualizar" class="botaoVoltar bg-gradient-to-t from-blue-400 via-blue-300 to-blue-500">
       <p>&lt;</p>
     </button>
   <input v-model="titulo">
@@ -54,6 +54,7 @@ titulo
 .botaoVoltar p{
   font-size: 40px;
   color: rgb(53, 52, 52);
+  color: black;
   font-weight: 700;
 }
   input, textArea{
