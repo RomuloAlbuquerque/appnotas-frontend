@@ -8,6 +8,7 @@
     "background_color": "#1E90FF",
     "display": "standalone",
     "prefer_related_applications": false,
+    
     "icons": [
       {
         "src": "/src/components/icons/IconNote.png"
@@ -19,6 +20,3 @@
       }
     ]
   }
-
-      // "theme_color": "#ffeb3b",
-    // "background_color": "#ffeb3b",

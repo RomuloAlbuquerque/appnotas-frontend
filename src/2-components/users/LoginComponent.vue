@@ -3,6 +3,7 @@ import router from '../../4-routes';
 import { ref } from 'vue';
 import { cadastrarUsuario } from '../../3-services/httpRequests/notes/asyncFunctions.vue';
 import userSecurity from '../../3-services/security/users/userSecurity.js';
+import { installApp } from '@/main';
 
 
 const nome = ref('')
@@ -46,6 +47,7 @@ const mostrarFormCadastrar = () => {
 <template>
 
   <div class="h-dvh flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-blue-300">
+    <button id="setup_button" @click="installApp">Installer</button>
     <div class="sm:mx-auto sm:w-full sm:max-w-sm titulo">
       <img class="mx-auto h-12 w-auto" src="/src/2-components/icons/IconNote.png" alt="Loyal Notas" />
       <h2 class="mt-10 text-center text-2xl font-semibold leading-9 tracking-tight text-gray-900">{{ msg }}</h2>
@@ -91,6 +93,9 @@ const mostrarFormCadastrar = () => {
 </template>
 
 <style scoped>
+#setup_button {
+    display: none;
+}
 input {
   padding-left: 10px;
   background-color: rgb(233, 230, 230);
