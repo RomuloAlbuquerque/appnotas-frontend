@@ -45,7 +45,7 @@ const mostrarFormCadastrar = () => {
 
 <template>
 
-  <div class="h-dvh flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-yellow-300">
+  <div class="h-dvh flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-blue-300">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm titulo">
       <img class="mx-auto h-12 w-auto" src="/src/2-components/icons/IconNote.png" alt="Loyal Notas" />
       <h2 class="mt-10 text-center text-2xl font-semibold leading-9 tracking-tight text-gray-900">{{ msg }}</h2>
