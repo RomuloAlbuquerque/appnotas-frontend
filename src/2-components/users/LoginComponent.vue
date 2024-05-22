@@ -3,7 +3,7 @@ import router from '../../4-routes';
 import { ref } from 'vue';
 import { cadastrarUsuario } from '../../3-services/httpRequests/notes/asyncFunctions.vue';
 import userSecurity from '../../3-services/security/users/userSecurity.js';
-import { installApp } from '@/main';
+import { installApp } from '@/3-services/pwa/handlerInstallApp';
 
 
 const nome = ref('')
