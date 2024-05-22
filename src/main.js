@@ -13,7 +13,7 @@ createApp(App).use(router).mount('#app')
 
 let deferredPrompt; // Allows to show the install prompt
 let setupButton;
-
+const teste = () => {
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
@@ -24,10 +24,12 @@ window.addEventListener('beforeinstallprompt', (e) => {
         setupButton = document.getElementById("setup_button");
     }
     // Show the setup button
-    setupButton.style.display = "inline";
-    setupButton.disabled = false;
-});
+    setupButton.style.display = "inline"
+    setupButton.disabled = false
+})
+}
 
+setTimeout(teste, 4000)
 
 export function installApp() {
     // Show the prompt

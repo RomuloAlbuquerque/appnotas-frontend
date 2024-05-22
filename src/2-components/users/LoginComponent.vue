@@ -47,7 +47,9 @@ const mostrarFormCadastrar = () => {
 <template>
 
   <div class="h-dvh flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-blue-300">
-    <button id="setup_button" @click="installApp">Installer</button>
+    <button id="setup_button" @click="installApp" class="w-24 absolute top-4 right-6 bg-gradient-to-t from-gray-600 via-gray-500 to-gray-600 hover:bg-gray-400 text-white font-semibold text-sm py-1 px-1 border-b-4 border-gray-700 hover:border-gray-500 rounded">
+  Instalar App
+</button>
     <div class="sm:mx-auto sm:w-full sm:max-w-sm titulo">
       <img class="mx-auto h-12 w-auto" src="/src/2-components/icons/IconNote.png" alt="Loyal Notas" />
       <h2 class="mt-10 text-center text-2xl font-semibold leading-9 tracking-tight text-gray-900">{{ msg }}</h2>
@@ -87,7 +89,7 @@ const mostrarFormCadastrar = () => {
       <p class="text-center"><a href="#" class="text-xl font-bold leading-6 text-red-600 hover:text-indigo-500">Vamos
           Recuperar</a></p>
       <br>
-      <p class="mt-10 text-center text-lg text-black-500 font-bold"><a href="#" @click="mostrarFormCadastrar">Ou fazer cadastro</a> </p>
+      <p class="border-double border-4 border-gray-500 mt-10 text-center text-lg text-black-500 font-bold"><a href="#" @click="mostrarFormCadastrar">Ou fazer cadastro</a> </p>
     </div>
   </div>
 </template>
