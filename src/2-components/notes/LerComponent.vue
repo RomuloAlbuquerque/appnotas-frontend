@@ -27,7 +27,7 @@ const sair = () => (security.destroyToken(), router.push(`/`))
     <div class="caixainput">
       <div class="caixa-sair-ola">
         <button class="sair" @click="sair">Sair</button>
-        <h1 class="nome">Olá {{ nome }}</h1>
+        <h1 class="inline-flex items-center rounded-md bg-gray-200 px-2 py-1.5 text-xs font-medium text-gray-700 ring-1 ring-inset ring-gray-500/10 border">{{ nome }}</h1>
       </div>
       <input v-model="termo" placeholder="Título a pesquisar" />
     </div>
