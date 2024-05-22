@@ -20,6 +20,7 @@ export const installApp = () => {
     deferredPrompt.userChoice
         .then((choiceResult) => {
             if (choiceResult.outcome === 'accepted') {
+                alert("App instalado com sucesso no seu celular")
                 console.log('PWA setup accepted');
                 setupButton.style.display = 'none';
             } else {
