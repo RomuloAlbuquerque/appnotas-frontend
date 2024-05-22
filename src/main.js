@@ -14,6 +14,7 @@ createApp(App).use(router).mount('#app')
 let deferredPrompt; // Allows to show the install prompt
 let setupButton;
 const teste = () => {
+    alert('teu cu')
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
